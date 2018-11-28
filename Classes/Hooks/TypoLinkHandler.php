@@ -1,6 +1,6 @@
 <?php
 
-namespace Monosize\LinkHandler\Plus\Hooks;
+namespace VV\T3telephone\Hooks;
 
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

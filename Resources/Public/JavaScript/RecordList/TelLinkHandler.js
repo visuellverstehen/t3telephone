@@ -1,6 +1,6 @@
 
 /**
- * Module: LinkhandlerPlus/RecordList/TelLinkHandler
+ * Module: T3telephone/RecordList/TelLinkHandler
  * Tel link interaction
  */
 define(['jquery', 'TYPO3/CMS/Recordlist/LinkBrowser'], function($, LinkBrowser) {
@@ -9,7 +9,7 @@ define(['jquery', 'TYPO3/CMS/Recordlist/LinkBrowser'], function($, LinkBrowser) 
 	/**
 	 *
 	 * @type {{}}
-	 * @exports LinkhandlerPlus/RecordList/TelLinkHandler
+	 * @exports T3telephone/RecordList/TelLinkHandler
 	 */
 	var TelLinkHandler = {};
 

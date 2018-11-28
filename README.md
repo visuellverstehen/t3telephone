@@ -1,12 +1,10 @@
-# TYPO3 CMS LinkHandler Plus
+[![Build Status](https://travis-ci.org/visuellverstehen/t3telephone.svg)](https://travis-ci.org/visuellverstehen/t3telephone)
+[![Downloads](https://img.shields.io/packagist/dt/visuellverstehen/t3telephone.svg)](https://packagist.org/packages/visuellverstehen/t3telephone)
 
-A LinkHandler extension to link to **tel:** urls.
-## Installation
+# t3telephone
 
-```
-composer require monosize/linkhandler-plus
-```
+TYPO3 LinkHandler for handling telephone links via `tel:` protocol.
 
-## Configuration
+## How to use
 
-Nothing to do.
+Install TYPO3 extension via Composer, TER or download and install manually.

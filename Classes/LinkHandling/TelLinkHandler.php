@@ -1,5 +1,5 @@
 <?php
-namespace Monosize\LinkHandler\Plus\LinkHandling;
+namespace VV\T3telephone\LinkHandling;
 
 use TYPO3\CMS\Core\LinkHandling\LinkHandlingInterface;
 
