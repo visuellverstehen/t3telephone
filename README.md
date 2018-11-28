@@ -7,4 +7,4 @@ TYPO3 LinkHandler for handling telephone links via `tel:` protocol.
 
 ## How to use
 
-Install TYPO3 extension via Composer, TER or download and install manually.
+Install TYPO3 extension via [Composer](https://packagist.org/packages/visuellverstehen/t3telephone), ~TER~ or download and install manually.
