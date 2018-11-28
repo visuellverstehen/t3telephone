@@ -10,7 +10,3 @@ composer require monosize/linkhandler-plus
 ## Configuration
 
 Nothing to do.
-
-## License
-
-GPLv2+
