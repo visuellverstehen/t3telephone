@@ -5,6 +5,9 @@ php:
 
 jobs:
   include:
+    - stage: Running tests
+      script:
+        - ./vendor/bin/phpunit --colors -c ./vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
     - stage: publish in TER
       if: tag IS present
       script:

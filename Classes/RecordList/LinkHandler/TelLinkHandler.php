@@ -84,7 +84,7 @@ class TelLinkHandler extends AbstractLinkHandler implements LinkHandlerInterface
      *
      * @return bool
      */
-    public function canHandleLink(array $linkParts)
+    public function canHandleLink(array $linkParts): bool
     {
         if ($linkParts['type'] === 'tel' && isset($linkParts['url']['url'])) {
             $this->linkParts = $linkParts;
@@ -100,7 +100,7 @@ class TelLinkHandler extends AbstractLinkHandler implements LinkHandlerInterface
      *
      * @return string
      */
-    public function formatCurrentUrl()
+    public function formatCurrentUrl(): string
     {
         return $this->linkParts['url']['url'];
     }
@@ -124,7 +124,7 @@ class TelLinkHandler extends AbstractLinkHandler implements LinkHandlerInterface
     /**
      * @return string[] Array of body-tag attributes
      */
-    public function getBodyTagAttributes()
+    public function getBodyTagAttributes(): array
     {
         return [];
     }

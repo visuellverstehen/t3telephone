@@ -13,7 +13,7 @@ class TelLinkHandler implements LinkHandlingInterface
      */
     public function asString(array $parameters): string
     {
-        $telephoneNumber = preg_replace('/(?:[^\d\+]+)/', '', $parameters['value']);
+        $telephoneNumber = preg_replace('/(?:[^\d\+]+)/', '', $parameters['url']);
 
         return 'tel:' . $telephoneNumber;
     }
@@ -28,7 +28,7 @@ class TelLinkHandler implements LinkHandlingInterface
     public function resolveHandlerData(array $data): array
     {
         return [
-            'tel' => preg_replace('tel:', '', $data['tel'])
+            'url' => preg_replace('/(tel:)/', '', $data['url'])
         ];
     }
 }
