@@ -1,16 +1,18 @@
 language: php
 
-php:
-  - '7.1'
+# php:
+#   - '7.1'
 
 jobs:
   include:
     - stage: Running tests
+      php: 7.2
       script:
-        - echo 'Disable tests for now'
-        #- composer install
-        #- ./vendor/bin/phpunit --colors -c ./vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
+        #- echo 'Disable tests for now'
+        - composer install
+        - ./vendor/bin/phpunit --colors -c ./vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
     - stage: publish in TER
+      php: 7.1
       if: tag IS present
       script:
         - |
