@@ -1,7 +1,6 @@
 <?php
 namespace VV\T3telephone\Recordlist\LinkHandler;
 
-
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -71,10 +70,9 @@ class TelLinkHandler extends AbstractLinkHandler implements LinkHandlerInterface
         // requirejs
         $pageRenderer->addRequireJsConfiguration([
             'paths' => [
-                'LinkhandlerPlus/RecordList/TelLinkHandler' => $fullJsPath . 'RecordList/TelLinkHandler',
+                'T3telephone/RecordList/TelLinkHandler' => $fullJsPath . 'RecordList/TelLinkHandler',
             ],
         ]);
-
     }
 
     /**
@@ -116,7 +114,7 @@ class TelLinkHandler extends AbstractLinkHandler implements LinkHandlerInterface
      */
     public function render(ServerRequestInterface $request)
     {
-        GeneralUtility::makeInstance(PageRenderer::class)->loadRequireJsModule('TYPO3/CMS/LinkhandlerPlus/RecordList/TelLinkHandler');
+        GeneralUtility::makeInstance(PageRenderer::class)->loadRequireJsModule('TYPO3/CMS/T3telephone/RecordList/TelLinkHandler');
 
         $this->view->assign('tel', !empty($this->linkParts) ? $this->linkParts['url']['url'] : '');
 
