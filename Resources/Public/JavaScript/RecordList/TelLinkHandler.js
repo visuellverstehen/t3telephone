@@ -1,4 +1,3 @@
-
 /**
  * Module: T3telephone/RecordList/TelLinkHandler
  * Tel link interaction
@@ -7,7 +6,6 @@ define(['jquery', 'TYPO3/CMS/Recordlist/LinkBrowser'], function($, LinkBrowser) 
 	'use strict';
 
 	/**
-	 *
 	 * @type {{}}
 	 * @exports T3telephone/RecordList/TelLinkHandler
 	 */

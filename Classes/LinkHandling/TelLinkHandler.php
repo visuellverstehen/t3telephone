@@ -5,20 +5,21 @@ use TYPO3\CMS\Core\LinkHandling\LinkHandlingInterface;
 
 class TelLinkHandler implements LinkHandlingInterface
 {
-
     /**
-     * Returns the link to an tel as a string
+     * Returns the sanatinzed link to an tel as a string.
      *
      * @param array $parameters
      * @return string
      */
     public function asString(array $parameters): string
     {
-        return 'tel:' . $parameters['tel'];
+        $telephoneNumber = preg_replace('/(?:[^\d\+]+)/', '', $parameters['value']);
+
+        return 'tel:' . $telephoneNumber;
     }
 
     /**
-     * Returns the email address without the "tel:" prefix
+     * Returns the telephone number without the url prefix prefix
      * in the 'tel' property of the array.
      *
      * @param array $data
@@ -26,5 +27,8 @@ class TelLinkHandler implements LinkHandlingInterface
      */
     public function resolveHandlerData(array $data): array
     {
-        return ['tel' => substr($data['tel'], 4)];
-    }}
+        return [
+            'tel' => preg_replace('tel:', '', $data['tel'])
+        ];
+    }
+}
