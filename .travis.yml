@@ -24,6 +24,5 @@ jobs:
             composer extension-release
             # Upload
             echo "Uploading release ${TRAVIS_TAG} to TER"
-            /home/travis/.config/composer/vendor/bin/ter-client remove-version t3telephone 1.0.0 -u "$TYPO3_ORG_USERNAME" -p "$TYPO3_ORG_PASSWORD"
             /home/travis/.config/composer/vendor/bin/ter-client upload t3telephone . -u "$TYPO3_ORG_USERNAME" -p "$TYPO3_ORG_PASSWORD" -m "$TAG_MESSAGE"
           fi;
