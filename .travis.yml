@@ -1,5 +1,8 @@
 language: php
 
+notifications:
+  slack: visuellverstehen:SZGPvqkWMI8R3qxAGG7nWXxS
+
 jobs:
   include:
     - stage: Running tests
