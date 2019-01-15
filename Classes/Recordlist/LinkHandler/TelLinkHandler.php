@@ -1,4 +1,5 @@
 <?php
+
 namespace VV\T3telephone\Recordlist\LinkHandler;
 
 use Psr\Http\Message\ServerRequestInterface;
@@ -28,9 +29,6 @@ class TelLinkHandler extends AbstractLinkHandler implements LinkHandlerInterface
      */
     protected $updateSupported = false;
 
-    /**
-     * Constructor
-     */
     public function __construct()
     {
         parent::__construct();
@@ -58,7 +56,7 @@ class TelLinkHandler extends AbstractLinkHandler implements LinkHandlerInterface
         parent::initialize($linkBrowser, $identifier, $configuration);
         $this->view->setTemplateRootPaths([
             GeneralUtility::getFileAbsFileName('EXT:recordlist/Resources/Private/Templates/LinkBrowser'),
-            GeneralUtility::getFileAbsFileName('EXT:t3telephone/Resources/Private/Templates/LinkBrowser')
+            GeneralUtility::getFileAbsFileName('EXT:t3telephone/Resources/Private/Templates/LinkBrowser'),
         ]);
 
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);

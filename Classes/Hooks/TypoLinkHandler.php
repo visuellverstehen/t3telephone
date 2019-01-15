@@ -16,6 +16,7 @@ class TypoLinkHandler implements SingletonInterface
      * @param string $linkHandlerValue
      * @param string $mixedLinkParameter
      * @param $cObj ContentObjectRenderer
+     *
      * @return array
      */
     public function main(string $linkText, array $configuration, string $linkHandlerKeyword, string $linkHandlerValue, string $mixedLinkParameter, ContentObjectRenderer $cObj): array
@@ -23,10 +24,10 @@ class TypoLinkHandler implements SingletonInterface
         $linkParameterParts = GeneralUtility::makeInstance(TypoLinkCodecService::class)->decode($mixedLinkParameter);
 
         return [
-            'href'   => $linkHandlerKeyword . ':' . $linkHandlerValue,
+            'href' => $linkHandlerKeyword . ':' . $linkHandlerValue,
             'target' => $linkParameterParts['target'],
-            'class'  => $linkParameterParts['class'],
-            'title'  => $linkParameterParts['title']
+            'class' => $linkParameterParts['class'],
+            'title' => $linkParameterParts['title'],
         ];
     }
 }
