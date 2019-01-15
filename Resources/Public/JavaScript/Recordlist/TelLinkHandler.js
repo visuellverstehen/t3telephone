@@ -3,30 +3,30 @@
  * Tel link interaction
  */
 define(['jquery', 'TYPO3/CMS/Recordlist/LinkBrowser'], function($, LinkBrowser) {
-	'use strict';
+  'use strict';
 
-	/**
-	 * @type {{}}
-	 * @exports T3telephone/RecordList/TelLinkHandler
-	 */
-	var TelLinkHandler = {};
+  /**
+   * @type {{}}
+   * @exports T3telephone/RecordList/TelLinkHandler
+   */
+  var TelLinkHandler = {};
 
-	$(function() {
-		$('#ltelform').on('submit', function(event) {
-			event.preventDefault();
+  $(function() {
+    $('#ltelform').on('submit', function(event) {
+      event.preventDefault();
 
-			var value = $(this).find('[name="ltel"]').val();
-			if (value === 'tel:') {
-				return;
-			}
+      var value = $(this).find('[name="ltel"]').val();
+      if (value === 'tel:') {
+        return;
+      }
 
-			while (value.substr(0, 4) === 'tel:') {
-				value = value.substr(4);
-			}
+      while (value.substr(0, 4) === 'tel:') {
+        value = value.substr(4);
+      }
 
-			LinkBrowser.finalizeFunction('tel:' + value);
-		});
-	});
+      LinkBrowser.finalizeFunction('tel:' + value);
+    });
+  });
 
-	return TelLinkHandler;
+  return TelLinkHandler;
 });
