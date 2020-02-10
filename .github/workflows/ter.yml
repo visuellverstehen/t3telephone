@@ -1,22 +1,11 @@
 name: TER
 
-on: [push]
+on:
+  push:
+    tags:
+      - '*'
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-
-      - name: Set up PHP Version
-        run: sudo update-alternatives --set php /usr/bin/php7.1
-
-      - name: Install requirements
-        run: composer update --prefer-dist --no-interaction --no-suggest
-
-      - name: Execute tests
-        run: /home/runner/.composer/vendor/bin/phpunit --colors -c /home/runner/.composer/vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
-
   publish:
     runs-on: ubuntu-latest
     steps:
