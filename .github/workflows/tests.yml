@@ -12,7 +12,7 @@ jobs:
         run: sudo update-alternatives --set php /usr/bin/php7.2
 
       - name: Install dependencies
-        run: composer global require --dev "typo3/testing-framework:4.15" --no-interaction --no-update
+        run: composer global require --dev "typo3/testing-framework:4.14" --no-interaction --no-update
 
       - name: Execute tests
         run: /home/runner/.composer/vendor/bin/phpunit --colors -c /home/runner/.composer/vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
