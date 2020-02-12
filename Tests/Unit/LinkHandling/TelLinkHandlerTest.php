@@ -2,8 +2,8 @@
 declare(strict_types = 1);
 namespace VV\T3telephone\Tests\Unit\LinkHandling;
 
-use VV\T3telephone\LinkHandling\TelLinkHandler;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use VV\T3telephone\LinkHandling\TelLinkHandler;
 
 class TelLinkHandlerTest extends UnitTestCase
 {
