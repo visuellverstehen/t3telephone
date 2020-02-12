@@ -3,26 +3,26 @@ name: Tests
 on: push
 
 jobs:
-  # phpunit:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     fail-fast: true
-  #     matrix:
-  #       php: [7.2, 7.3]
-  #       TYPO3: [8.7, 9.5]
-  #   name: PHP${{ matrix.php }} - TYPO3 ${{ matrix.TYPO3 }}
-  #   steps:
-  #     - uses: actions/checkout@v1
+  phpunit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [7.2, 7.3]
+        testing-framework: [8.7, 9.5]
+    name: PHP${{ matrix.php }} - TYPO3 ${{ matrix.TYPO3 }}
+    steps:
+      - uses: actions/checkout@v1
 
-  #     - name: Set up PHP Version
-  #       uses: shivammathur/setup-php@v1
-  #       with:
-  #         php-version: ${{ matrix.php }}
-  #         extensions: curl, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, iconv
-  #         coverage: none
+      - name: Set up PHP Version
+        uses: shivammathur/setup-php@v1
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: curl, mbstring, zip
+          coverage: none
 
-  #     - name: Install dependencies
-  #       run: composer require "typo3/cms-core:${{ matrix.TYPO3 }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+      - name: Install dependencies
+        run: composer require "typo3/testing-framework:${{ matrix.testing-framework }}" --no-interaction --no-update
 
       # - name: Execute tests
       #   run: ./vendor/bin/phpunit --colors -c ./vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
