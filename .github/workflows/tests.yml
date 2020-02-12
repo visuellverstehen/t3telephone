@@ -12,10 +12,10 @@ jobs:
         run: sudo update-alternatives --set php /usr/bin/php7.2
 
       - name: Install dependencies
-        run: composer require "typo3/testing-framework:4.15" --no-interaction --no-update
+        run: composer global require --dev "typo3/testing-framework:4.15" --no-interaction --no-update
 
       - name: Execute tests
-        run: ./vendor/bin/phpunit --colors -c ./vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
+        run: /home/runner/.composer/vendor/bin/phpunit --colors -c ./vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
 
   codingstyle:
     runs-on: ubuntu-latest
@@ -26,7 +26,7 @@ jobs:
         run: sudo update-alternatives --set php /usr/bin/php7.2
 
       - name: Install requirements
-        run: composer global require --dev friendsofphp/php-cs-fixer
+        run: composer global require --dev friendsofphp/php-cs-fixer --no-interaction --no-update
 
       - name: Execute style check
         run: /home/runner/.composer/vendor/bin/php-cs-fixer fix --dry-run --diff
