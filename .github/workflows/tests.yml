@@ -5,27 +5,17 @@ on: push
 jobs:
   phpunit:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
-      matrix:
-        php: [7.2, 7.3]
-        testing-framework: [1.3, 4.14]
-    name: PHP${{ matrix.php }} - Testing Framework ${{ matrix.testing-framework }}
     steps:
       - uses: actions/checkout@v1
 
       - name: Set up PHP Version
-        uses: shivammathur/setup-php@v1
-        with:
-          php-version: ${{ matrix.php }}
-          extensions: curl, mbstring, zip
-          coverage: none
+        run: sudo update-alternatives --set php /usr/bin/php7.2
 
       - name: Install dependencies
-        run: composer require "typo3/testing-framework:${{ matrix.testing-framework }}" --no-interaction --no-update
+        run: composer require "typo3/testing-framework:4.15" --no-interaction --no-update
 
-      # - name: Execute tests
-      #   run: ./vendor/bin/phpunit --colors -c ./vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
+      - name: Execute tests
+        run: ./vendor/bin/phpunit --colors -c ./vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
 
   codingstyle:
     runs-on: ubuntu-latest
